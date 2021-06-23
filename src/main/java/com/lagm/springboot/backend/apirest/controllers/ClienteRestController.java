@@ -1,6 +1,5 @@
 package com.lagm.springboot.backend.apirest.controllers;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,7 +12,6 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -131,7 +129,7 @@ public class ClienteRestController {
 			
 			response.put("errors", errors);
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
-		}
+		}	
 		
 		if (clienteActual == null) {
 			response.put("mensaje", "Error: no se pudo editar. El cliente ID: ".concat(id.toString().concat(" no existe en la base de datos!")));
