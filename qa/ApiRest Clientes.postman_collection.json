@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "496ecfbc-bcb2-4485-818f-9899cd9b8a49",
+		"_postman_id": "f08be7e6-aed6-4755-baad-a800fe9eb89a",
 		"name": "ApiRest Clientes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -14,7 +14,16 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:8081/api/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"clientes"
+							]
 						}
 					},
 					"response": []
@@ -25,7 +34,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:8081/api/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"clientes",
+								"1"
+							]
 						}
 					},
 					"response": []
@@ -33,10 +52,28 @@
 				{
 					"name": "Registrar cliente",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"apellido\": \"Sultano\",\r\n    \"createAt\": \"2021-01-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:8081/api/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"clientes"
+							]
 						}
 					},
 					"response": []
