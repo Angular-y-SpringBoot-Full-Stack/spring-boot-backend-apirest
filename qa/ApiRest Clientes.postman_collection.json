@@ -81,10 +81,29 @@
 				{
 					"name": "Actualizar cliente",
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Andrés2\",\r\n    \"apellido\": \"Guzmán\",\r\n    \"email\": \"john.doe@bolsadeideas.com\",\r\n    \"createAt\": \"2021-06-23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:8081/api/clientes/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"clientes",
+								"14"
+							]
 						}
 					},
 					"response": []
