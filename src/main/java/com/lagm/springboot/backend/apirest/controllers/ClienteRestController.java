@@ -57,11 +57,22 @@ public class ClienteRestController {
 	}
 	
 	@PostMapping("/clientes")
-	@ResponseStatus(HttpStatus.CREATED) // CREATED: 201, cuando se creó contenido 
 	// @ResponseStatus: Por defecto si no se asigna el ResponseStatus, el valor por defecto es HttpStatus.OK = 200
 	// @RequestBody: El objeto cliente viene en formato JSON dentro del cuerpo del request
-	public Cliente create(@RequestBody Cliente cliente) {
-		return clienteService.save(cliente);
+	public ResponseEntity<?> create(@RequestBody Cliente cliente) {
+		Cliente clienteNew = null;
+		Map<String, Object> response = new HashMap<>();
+		try {
+			clienteNew = clienteService.save(cliente);
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error al realizar el insert en la base de datos!");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		response.put("mensaje", "El cliente ha sido creado con éxito");
+		response.put("cliente", clienteNew);
+		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED); // CREATED: 201, cuando se creó contenido 
 	}
 	
 	@PutMapping("/clientes/{id}")
