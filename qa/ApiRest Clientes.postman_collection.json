@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "f08be7e6-aed6-4755-baad-a800fe9eb89a",
+		"_postman_id": "507358a1-4dd4-4134-8f42-cb5df58b9ed0",
 		"name": "ApiRest Clientes",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6041738"
 	},
 	"item": [
 		{
@@ -26,6 +27,28 @@
 									"path": [
 										"api",
 										"clientes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar clientes Paginable",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/clientes/page/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"clientes",
+										"page",
+										"2"
 									]
 								}
 							},
