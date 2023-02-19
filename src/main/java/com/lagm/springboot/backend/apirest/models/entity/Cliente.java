@@ -14,6 +14,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -35,9 +36,12 @@ public class Cliente implements Serializable {
 	
 	@NotEmpty(message = "no puede estar vacío")
 	@Email(message = "no es una dirección de correo bien formada")
-	@Column(nullable = false, unique = true) // Email no nulo y único (para que no se pueda duplicar)
+	// @Column(nullable = false, unique = true) // Email no nulo y único (para que no se pueda duplicar)
+	@Column(nullable = false, unique = false) // temporary email not unique
 	private String email;
 
+
+	@NotNull(message = "no puede estar vacío")
 	@Column(name = "create_at")
 	@Temporal(TemporalType.DATE)
 	private Date createAt;
