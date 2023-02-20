@@ -31,12 +31,11 @@ public class Usuario implements Serializable {
 	@Column(length = 60)
 	private String password;
 
-	private Boolean enable;
+	private Boolean enabled;
 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name = "usuario_id"), 
-		inverseJoinColumns = @JoinColumn(name = "role_id"),
-		uniqueConstraints = @UniqueConstraint(columnNames = {"usuario_id", "role_id"}))
+	@JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "role_id"), uniqueConstraints = @UniqueConstraint(columnNames = {
+			"usuario_id", "role_id" }))
 	private List<Role> roles;
 
 	public Long getId() {
@@ -63,12 +62,12 @@ public class Usuario implements Serializable {
 		this.password = password;
 	}
 
-	public Boolean getEnable() {
-		return enable;
+	public Boolean getEnabled() {
+		return enabled;
 	}
 
-	public void setEnable(Boolean enable) {
-		this.enable = enable;
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
 	}
 
 	public List<Role> getRoles() {

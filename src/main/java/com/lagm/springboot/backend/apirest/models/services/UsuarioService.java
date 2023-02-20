@@ -42,7 +42,7 @@ public class UsuarioService implements UserDetailsService {
 				.map(role -> new SimpleGrantedAuthority(role.getNombre()))
 				.peek(authority -> logger.info(authority.getAuthority()))
 				.collect(Collectors.toList());
-		return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnable(), true, true, true, authorities);
+		return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true, authorities);
 	}
 
 }

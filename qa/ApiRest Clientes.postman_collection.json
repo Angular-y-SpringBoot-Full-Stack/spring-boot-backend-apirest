@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "507358a1-4dd4-4134-8f42-cb5df58b9ed0",
+		"_postman_id": "5cfef475-400d-4c36-a125-3b5395695f47",
 		"name": "ApiRest Clientes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "6041738"
@@ -86,10 +86,20 @@
 						{
 							"name": "Buscar cliente por Id",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4NTY3MjcsInVzZXJfbmFtZSI6ImFuZHJlcyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiJjMDI0NzVjZC1lYjZhLTRjMGYtOTEwYS0xNGU5NzZlNmQ0NzUiLCJjbGllbnRfaWQiOiJhbmd1bGFyYXBwIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.mwkjB664HrxbzFlnh4noksIAUsSeWj_3rDpKCpcW190",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8081/api/clientes/100",
+									"raw": "http://localhost:8081/api/clientes/1",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -98,7 +108,7 @@
 									"path": [
 										"api",
 										"clientes",
-										"100"
+										"1"
 									]
 								}
 							},
@@ -137,10 +147,20 @@
 						{
 							"name": "Eliminar cliente",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4NTY3MjcsInVzZXJfbmFtZSI6ImFuZHJlcyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiJjMDI0NzVjZC1lYjZhLTRjMGYtOTEwYS0xNGU5NzZlNmQ0NzUiLCJjbGllbnRfaWQiOiJhbmd1bGFyYXBwIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.mwkjB664HrxbzFlnh4noksIAUsSeWj_3rDpKCpcW190",
+											"type": "string"
+										}
+									]
+								},
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8081/api/clientes/100",
+									"raw": "http://localhost:8081/api/clientes/12",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -149,7 +169,7 @@
 									"path": [
 										"api",
 										"clientes",
-										"100"
+										"12"
 									]
 								}
 							},
@@ -271,6 +291,66 @@
 									"path": [
 										"api",
 										"clientes"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "Auth",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "12345",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "angularapp",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "andres",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345",
+											"type": "text"
+										},
+										{
+											"key": "grant_type",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8081/oauth/token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"oauth",
+										"token"
 									]
 								}
 							},
