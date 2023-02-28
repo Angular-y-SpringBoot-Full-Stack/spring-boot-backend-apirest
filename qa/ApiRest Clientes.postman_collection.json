@@ -38,7 +38,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8081/api/clientes/page/2",
+									"raw": "http://localhost:8081/api/clientes/page/1",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -48,7 +48,7 @@
 										"api",
 										"clientes",
 										"page",
-										"2"
+										"1"
 									]
 								}
 							},
@@ -57,6 +57,16 @@
 						{
 							"name": "Registrar cliente",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvX2FkaWNpb25hbCI6IkhvbGEgcXVlIHRhbCBhZG1pbiIsInVzZXJfbmFtZSI6ImFkbWluIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiVGl0b3IiLCJleHAiOjE2Nzc1NjY0OTgsIm5vbWJyZSI6IkpvaG4iLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl0sImp0aSI6IjM2NjJmMDk0LTYyYTUtNGNkZi1iOWVlLTE2Y2Y1ODgwNmQ4NyIsImVtYWlsIjoiam9obkBnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJhbmd1bGFyYXBwIn0.zBhdvWMjSzOkbMh0tZ21tD-4IFnS0GcQNbY92hr14Ss",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -91,7 +101,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4NTY3MjcsInVzZXJfbmFtZSI6ImFuZHJlcyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiJjMDI0NzVjZC1lYjZhLTRjMGYtOTEwYS0xNGU5NzZlNmQ0NzUiLCJjbGllbnRfaWQiOiJhbmd1bGFyYXBwIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.mwkjB664HrxbzFlnh4noksIAUsSeWj_3rDpKCpcW190",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvX2FkaWNpb25hbCI6IkhvbGEgcXVlIHRhbCBhbmRyZXMiLCJ1c2VyX25hbWUiOiJhbmRyZXMiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiYXBlbGxpZG8iOiJHdXptYW4iLCJleHAiOjE2Nzc1NjYzNzgsIm5vbWJyZSI6IkFuZHJlcyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiIxMzY5ODQzYy1iOGM0LTRiOTMtYmNlZC01NWFmNTE0YmQ0YTQiLCJlbWFpbCI6ImFuZHJlc0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJhbmd1bGFyYXBwIn0.bXwaXqOlZMpWw0FUWyqEyrQMQXF80s6SN4f_jsRLKv4",
 											"type": "string"
 										}
 									]
@@ -152,7 +162,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4NTY3MjcsInVzZXJfbmFtZSI6ImFuZHJlcyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiJjMDI0NzVjZC1lYjZhLTRjMGYtOTEwYS0xNGU5NzZlNmQ0NzUiLCJjbGllbnRfaWQiOiJhbmd1bGFyYXBwIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.mwkjB664HrxbzFlnh4noksIAUsSeWj_3rDpKCpcW190",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbmZvX2FkaWNpb25hbCI6IkhvbGEgcXVlIHRhbCBhZG1pbiIsInVzZXJfbmFtZSI6ImFkbWluIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImFwZWxsaWRvIjoiVGl0b3IiLCJleHAiOjE2Nzc1NjY0OTgsIm5vbWJyZSI6IkpvaG4iLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl0sImp0aSI6IjM2NjJmMDk0LTYyYTUtNGNkZi1iOWVlLTE2Y2Y1ODgwNmQ4NyIsImVtYWlsIjoiam9obkBnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJhbmd1bGFyYXBwIn0.zBhdvWMjSzOkbMh0tZ21tD-4IFnS0GcQNbY92hr14Ss",
 											"type": "string"
 										}
 									]
@@ -160,7 +170,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8081/api/clientes/12",
+									"raw": "http://localhost:8081/api/clientes/13",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -169,7 +179,7 @@
 									"path": [
 										"api",
 										"clientes",
-										"12"
+										"13"
 									]
 								}
 							},
@@ -302,7 +312,7 @@
 					"name": "auth",
 					"item": [
 						{
-							"name": "Auth",
+							"name": "Auth ROLE_USER",
 							"request": {
 								"auth": {
 									"type": "basic",
@@ -327,6 +337,61 @@
 										{
 											"key": "username",
 											"value": "andres",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345",
+											"type": "text"
+										},
+										{
+											"key": "grant_type",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8081/oauth/token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"oauth",
+										"token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Auth ROLE_ADMIN",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "12345",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "angularapp",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "admin",
 											"type": "text"
 										},
 										{
