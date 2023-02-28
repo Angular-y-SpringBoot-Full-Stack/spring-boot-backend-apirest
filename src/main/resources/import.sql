@@ -11,8 +11,8 @@ INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Magma', 'Lee'
 INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Tornado', 'Roe', 'tornado.roe@bolsadeideas.com', '2018-03-05');
 INSERT INTO clientes (nombre, apellido, email, create_at) VALUES ('Jade', 'Doe', 'jade.doe@bolsadeideas.com', '2018-03-06');
 
-INSERT INTO `usuarios` (username, password, enabled) VALUES ('andres', '$2a$10$v4uG5SWGd9NvmP/gRCBhR.gmrtYfvGaUi0Ltu/gr.ebBXkd1qNVhm', 1);
-INSERT INTO `usuarios` (username, password, enabled) VALUES ('admin', '$2a$10$4vZw4LSYd/xl/4FyrmBn8.2UKzS1.kFVbjquR7ian2muotQmqo0ai', 1);
+INSERT INTO `usuarios` (username, password, enabled, nombre, apellido, email) VALUES ('andres', '$2a$10$v4uG5SWGd9NvmP/gRCBhR.gmrtYfvGaUi0Ltu/gr.ebBXkd1qNVhm', 1, 'Andres', 'Guzman', 'andres@gmail.com');
+INSERT INTO `usuarios` (username, password, enabled, nombre, apellido, email) VALUES ('admin', '$2a$10$4vZw4LSYd/xl/4FyrmBn8.2UKzS1.kFVbjquR7ian2muotQmqo0ai', 1, 'John', 'Titor', 'john@gmail.com');
 
 INSERT INTO `roles` (nombre) VALUES ('ROLE_USER');
 INSERT INTO `roles` (nombre) VALUES ('ROLE_ADMIN');
