@@ -14,6 +14,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -50,6 +51,7 @@ public class ClienteRestController {
 		return clienteService.findAll(pageable);
 	}
 	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
 	@GetMapping("/clientes/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<?> show(@PathVariable Long id) {
@@ -70,6 +72,7 @@ public class ClienteRestController {
 		return new ResponseEntity<Cliente>(cliente, HttpStatus.OK);
 	}
 	
+	@Secured("ROLE_ADMIN") // @Secured({"ROLE_ADMIN"})
 	@PostMapping("/clientes")
 	// @ResponseStatus: Por defecto si no se asigna el ResponseStatus, el valor por defecto es HttpStatus.OK = 200
 	// @RequestBody: El objeto cliente viene en formato JSON dentro del cuerpo del request
@@ -124,6 +127,14 @@ public class ClienteRestController {
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED); // CREATED: 201, cuando se creó contenido 
 	}
 	
+	@Secured({"ROLE_ADMIN", "ROLE_USER"})
+	@PostMapping("/clientes/upload")
+	public ResponseEntity<?> upload() {
+		// TODO
+		return null;
+	}
+	
+	@Secured("ROLE_ADMIN")
 	@PutMapping("/clientes/{id}")
 	public ResponseEntity<?> update(@Valid @RequestBody Cliente cliente, BindingResult result, @PathVariable Long id) {
 		// Es importante el orden. El BindingResult debe estar justo después de Cliente pero antes de @PathVariable
@@ -167,6 +178,7 @@ public class ClienteRestController {
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED); 
 	}
 	
+	@Secured("ROLE_ADMIN")
 	@DeleteMapping("clientes/{id}")
 	// @ResponseStatus(HttpStatus.NO_CONTENT) // NO_CONTENT: 204 // Se va a quitar esto ya que ahora vamos a retornar contenido
 	public ResponseEntity<?> delete(@PathVariable Long id) {
@@ -181,5 +193,12 @@ public class ClienteRestController {
 		
 		response.put("mensaje", "El cliente ha sido eliminado con éxito!");
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK); // HttpStatus.OK ya que se va a retornar un contenido: la respuesta con el mensaje
+	}
+	
+	@Secured("ROLE_ADMIN")
+	@GetMapping("/clientes/regiones")
+	public List<?> listarRegiones() {
+		// TODO
+		return null;
 	}
 }
