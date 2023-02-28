@@ -12,7 +12,18 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/clientes").permitAll()
+		// RECOMENDACIÓN: Siempre partir desde las reglas más específicas hasta las más genéricas
+		
+		http.authorizeRequests()
+		.antMatchers(HttpMethod.GET, "/api/clientes", "/api/clientes/page/**", "/api/uploads/img/**").permitAll()
+		.antMatchers(HttpMethod.GET, "/api/clientes/{id}").hasAnyRole("USER", "ADMIN")
+		.antMatchers(HttpMethod.POST, "/api/clientes/upload").hasAnyRole("USER", "ADMIN")
+		.antMatchers(HttpMethod.POST, "/api/clientes").hasRole("ADMIN")
+		
+		// Como no se indica el método http, se aplica para cualquier otro que no esté indicado arriba: PUT, DELETE
+		.antMatchers("/api/clientes/**").hasRole("ADMIN")
+		
+		// Todas las rutas que no se especificaron van a ser solo para usuarios autenticados (independiente del rol)
 		.anyRequest().authenticated();
 	}
 }
