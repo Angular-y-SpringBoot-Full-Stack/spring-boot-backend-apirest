@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -40,16 +39,16 @@ public class Cliente implements Serializable {
 	@Column(nullable = false, unique = false) // temporary email not unique
 	private String email;
 
-
 	@NotNull(message = "no puede estar vacío")
 	@Column(name = "create_at")
 	@Temporal(TemporalType.DATE)
 	private Date createAt;
 	
-	@PrePersist // @PrePersist: Evento que se ejecuta antes de que se haga un save/persist en la base de datos
-	public void prePersist() {
-		createAt = new Date();
-	}
+	//@PrePersist // @PrePersist: Evento que se ejecuta antes de que se haga un save/persist en la base de datos
+	//public void prePersist() {
+	//	createAt = new Date();
+	//}
+	// Se comenta, para enviar la fecha desde el formulario de Angular
 
 	public Long getId() {
 		return id;
